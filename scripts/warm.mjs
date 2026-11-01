@@ -13,9 +13,13 @@ console.log('pages', pending.length)
 for (let round = 1; round <= ROUNDS && pending.length; round += 1) {
   const failed = []
   for (const path of pending) {
-    const res = await fetch(`${base}${path}`)
-    await res.arrayBuffer()
-    if (res.status !== 200) failed.push(path)
+    try {
+      const res = await fetch(`${base}${path}`, { signal: AbortSignal.timeout(30_000) })
+      await res.arrayBuffer()
+      if (res.status !== 200) failed.push(path)
+    } catch {
+      failed.push(path)
+    }
   }
   console.log(`round ${round}: ${pending.length - failed.length} ok, ${failed.length} left`)
   pending = failed
