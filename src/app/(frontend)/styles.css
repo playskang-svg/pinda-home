@@ -765,8 +765,8 @@ small {
 /* Footer */
 .site-footer {
   padding-block: 40px 36px;
-  background: var(--ink);
-  color: #cdd6e3;
+  background: rgb(var(--shade));
+  color: #d9d4cc;
   font-size: 15px;
   text-align: center;
 }
@@ -1142,10 +1142,14 @@ small {
   overflow-x: auto;
 }
 
+/* Two-column breakdowns must fit a phone; only tables with a header row scroll. */
+.rate-table:has(thead) {
+  min-width: 460px;
+}
+
 .rate-table,
 .prose table {
   width: 100%;
-  min-width: 460px;
   border-collapse: collapse;
   font-size: 15.5px;
   line-height: 1.55;
