@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/app/(frontend)/styles.css"
+        ],
+        "createdAt": "2026-11-01T05:12:58.984Z",
+        "reason": "project CLAUDE.md section 2 requires the H2 box with a 6px left accent bar"
+      }
+    ]
+  }
+}

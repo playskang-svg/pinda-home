@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "kr.bizhelp.pindaai",
+        "sha256_cert_fingerprints": ["E6:A1:96:9F:77:4E:36:A0:E5:A5:C2:19:91:49:B7:51:78:75:D7:43:79:C5:15:93:88:5F:06:7C:E9:B6:73:88"]
+      }
+    }]
