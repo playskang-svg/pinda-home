@@ -37,11 +37,9 @@ export async function CategoryPage({ category }: { category: (typeof CATEGORIES)
             {category.intro.map((text) => (
               <p key={text}>{text}</p>
             ))}
-            {category.tool ? (
-              <Link className="button" href={category.tool.href}>
-                {category.tool.label}
-              </Link>
-            ) : null}
+            <Link className="button" href={category.tool.href}>
+              {category.tool.label}
+            </Link>
           </div>
           <PostList posts={posts?.docs ?? []} />
         </div>
