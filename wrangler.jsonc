@@ -12,7 +12,10 @@
   "observability": { "enabled": true },
   "workers_dev": false,
   "preview_urls": false,
-  "routes": [{ "pattern": "next.pinda.kr", "custom_domain": true }],
+  "routes": [
+    { "pattern": "pinda.kr", "custom_domain": true },
+    { "pattern": "www.pinda.kr", "custom_domain": true }
+  ],
   "version_metadata": { "binding": "CF_VERSION_METADATA" },
   "d1_databases": [
     {
