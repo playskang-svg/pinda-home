@@ -12,6 +12,7 @@ const SAJU = 'https://saju.pinda.kr'
 const LEGACY =
   /^\/(s\/|og\/|og\.png$|blog(\/|$)|guide$|pay\/|app\/|icons\/|js\/|manifest\.webmanifest$|api\/(auth|chat|chats|coupon|me|pass|pay|ping|share|admin)(\/|$))/
 const NEVER_CACHE = /^\/(admin|api|search|_next)(\/|$)/
+const MEDIA_FILE = /^\/api\/media\/file\/([^/]+)$/
 const EDGE_TTL = 300
 const edge = (caches as unknown as { default: Cache }).default
 
@@ -46,6 +47,22 @@ const worker = {
     if (LEGACY.test(url.pathname) || (url.pathname === '/' && url.searchParams.get('source') === 'app')) {
       const status = req.method === 'GET' || req.method === 'HEAD' ? 301 : 308
       return Response.redirect(`${SAJU}${url.pathname}${url.search}`, status)
+    }
+    // Images go straight to R2: through Payload each one is a render the free plan can cut off.
+    const media = url.pathname.match(MEDIA_FILE)
+    if (media && (req.method === 'GET' || req.method === 'HEAD')) {
+      const key = new Request(`${url.origin}${url.pathname}`)
+      const hit = await edge.match(key)
+      if (hit) return hit
+      const file = await env.R2.get(decodeURIComponent(media[1]))
+      if (file) {
+        const headers = new Headers()
+        file.writeHttpMetadata(headers)
+        headers.set('cache-control', 'public, max-age=86400')
+        const res = new Response(file.body, { headers })
+        ctx.waitUntil(edge.put(key, res.clone()))
+        return res
+      }
     }
     if (!isPageRead(req, url)) return next.fetch(req, env, ctx)
 

@@ -136,6 +136,7 @@ for (const page of pages) {
 console.log('pages', pages.length)
 
 await payload.updateGlobal({ slug: 'navigation', data: navigation })
+if (process.env.SEED_ONLY === 'pages') process.exit(0)
 
 const posts: PostSeed[] = fs
   .readdirSync(POST_DIR)
