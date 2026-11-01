@@ -75,7 +75,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </div>
             <p className="site-footer__note">
               공식 요금표를 직접 확인해 정리하는 정보 사이트입니다. 한국전력, 도시가스사, 수도사업본부 등 어떤 기관과도
-              관계가 없습니다. 실제 청구액은 각 기관의 고지서를 기준으로 합니다.
+              관계가 없습니다. 실제 청구액은 각 기관의 고지서를 기준으로 합니다. 사이트의 인물과 집 사진은 AI로 만든 연출
+              이미지입니다.
             </p>
           </div>
         </footer>

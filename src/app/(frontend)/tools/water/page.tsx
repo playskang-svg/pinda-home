@@ -61,7 +61,7 @@ export default async function Page() {
       <h2>다른 지역에 살고 있다면</h2>
       <p>
         요금 체계가 도시마다 달라서 이 계산기는 서울 기준입니다. 부산과 인천은 하수도요금이 사용량에 따라 누진됩니다. 주요 도시의
-        단가는 <Link href="/rates">공식 요금표</Link>에서 비교할 수 있습니다.
+        단가는 <Link href="/rates">요금표 모음</Link>에서 비교할 수 있습니다.
       </p>
       <p>
         감면 제도와 누수 확인법은 <Link href="/posts/seoul-water-bill-explained">서울 수도요금 읽는 법</Link>과{' '}

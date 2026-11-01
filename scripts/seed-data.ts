@@ -83,6 +83,7 @@ export const pages: { slug: string; title: string; description: string; body: Bl
     description: '살림핀다가 요금과 제도 정보를 어떤 자료로 어떻게 확인하고 고치는지 안내합니다.',
     body: [
       { p: '생활요금 정보는 숫자 하나만 틀려도 쓸모가 없어집니다. 살림핀다는 아래 기준으로 자료를 확인합니다.' },
+      { p: '글의 초안 작성과 검수에는 AI 도구를 활용합니다. 그래서 금액은 계산기와 같은 코드로 다시 계산하고, 제도 내용은 아래 공식 자료와 대조합니다.' },
       { h2: '어떤 자료를 쓰나요' },
       { ol: [
         '1순위는 요금을 정하거나 부과하는 기관의 공식 페이지와 공식 문서입니다. 한국전력, 도시가스 공급사, 지자체 상수도 조례와 수도사업본부, 한국에너지공단 등이 여기에 해당합니다.',
@@ -115,12 +116,13 @@ export const pages: { slug: string; title: string; description: string; body: Bl
       { h2: '자동으로 처리되는 정보' },
       { p: '사이트 운영과 보안을 위해 서비스 제공 업체(Cloudflare)가 접속 IP, 브라우저 정보, 접속 시각 같은 기술 정보를 일시적으로 처리할 수 있습니다.' },
       { h2: '쿠키와 광고' },
-      { p: '사이트는 Google 애드센스 광고를 게재할 수 있습니다. Google을 포함한 제3자 광고 사업자는 쿠키를 사용해 이용자가 이 사이트와 다른 사이트를 방문한 기록을 바탕으로 광고를 보여 줄 수 있습니다.' },
+      { p: '사이트는 Google 애드센스 광고를 게재할 수 있습니다. 광고가 게재되면 Google을 포함한 제3자가 이용자 브라우저에 쿠키를 넣거나 읽을 수 있고, 웹 비콘이나 IP 주소로 정보를 수집할 수 있습니다.' },
+      { p: 'Google을 포함한 제3자 광고 사업자는 이 정보를 이용해 이용자가 이 사이트와 다른 사이트를 방문한 기록을 바탕으로 광고를 보여 줄 수 있습니다.' },
       { p: [
         '맞춤 광고를 원하지 않으면 ',
         { text: 'Google 광고 설정', url: 'https://adssettings.google.com/' },
         '에서 끌 수 있습니다. Google이 정보를 사용하는 방식은 ',
-        { text: 'Google 파트너 사이트의 데이터 사용 방식', url: 'https://policies.google.com/technologies/partner-sites' },
+        { text: 'Google 파트너의 사이트 또는 앱을 사용할 때 Google에서 데이터를 사용하는 방식', url: 'https://www.google.com/policies/privacy/partners/' },
         ' 안내에서 확인할 수 있습니다. 브라우저 설정에서 쿠키를 차단해도 사이트의 글과 계산기는 그대로 이용할 수 있습니다.',
       ] },
       { h2: '외부 링크' },
@@ -175,7 +177,7 @@ export const pages: { slug: string; title: string; description: string; body: Bl
 export const navigation = {
   header: [
     { label: '요금 계산기', url: '/tools' },
-    { label: '공식 요금표', url: '/rates' },
+    { label: '요금표 모음', url: '/rates' },
     { label: '전기요금', url: '/electricity' },
     { label: '가스·난방', url: '/gas-heating' },
     { label: '수도요금', url: '/water' },

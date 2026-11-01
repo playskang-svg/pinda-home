@@ -1,4 +1,5 @@
 import { Breadcrumbs } from '@/components/Breadcrumbs'
+import Link from '@/components/Link'
 import { PhotoHead } from '@/components/PhotoHead'
 import { PostList } from '@/components/PostList'
 import { getClient, publishedWhere } from '@/lib/payload'
@@ -32,6 +33,16 @@ export async function CategoryPage({ category }: { category: (typeof CATEGORIES)
       />
       <section className="section">
         <div className="frame">
+          <div className="category-intro">
+            {category.intro.map((text) => (
+              <p key={text}>{text}</p>
+            ))}
+            {category.tool ? (
+              <Link className="button" href={category.tool.href}>
+                {category.tool.label}
+              </Link>
+            ) : null}
+          </div>
           <PostList posts={posts?.docs ?? []} />
         </div>
       </section>

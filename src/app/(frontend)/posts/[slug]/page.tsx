@@ -130,7 +130,8 @@ export default async function PostPage({ params }: Props) {
         ) : null}
         <p className="disclosure">
           요금과 제도는 바뀔 수 있습니다. 실제 청구액과 신청 자격은 고지서와 해당 기관의 공식 안내를 기준으로 확인해
-          주세요.
+          주세요. 글: 살림핀다. AI 도구로 초안을 쓰고 공식 자료와 대조했습니다.{' '}
+          <Link href="/editorial-policy">자료 확인 기준 보기</Link>
         </p>
         <ShareBar card text={post.summary} title={post.title} url={url} />
       </div>

@@ -1234,3 +1234,15 @@ small {
 .rates-block {
   margin-bottom: 48px;
 }
+.category-intro {
+  max-width: 44em;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.category-intro p {
+  margin: 0 0 16px;
+}
+
+.category-intro .button {
+  margin-top: 8px;
+}

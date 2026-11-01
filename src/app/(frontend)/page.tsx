@@ -50,7 +50,7 @@ export default async function HomePage() {
             내 요금 계산하기
           </a>
           <Link className="button button--ghost" href="/rates">
-            공식 요금표 보기
+            요금표 모음 보기
           </Link>
         </div>
       </PhotoHead>

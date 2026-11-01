@@ -56,7 +56,7 @@ export default async function Page() {
         <li>개별난방 단가로 계산합니다. 중앙난방 단가가 따로 있는 지역은 고지서와 다를 수 있습니다.</li>
       </ul>
       <p>
-        지역별 단가 차이는 <Link href="/rates">공식 요금표</Link>에서, 고지서 항목 설명은{' '}
+        지역별 단가 차이는 <Link href="/rates">요금표 모음</Link>에서, 고지서 항목 설명은{' '}
         <Link href="/posts/city-gas-bill-explained">도시가스 고지서 읽는 법</Link>에서 확인할 수 있습니다.
       </p>
     </ToolPage>

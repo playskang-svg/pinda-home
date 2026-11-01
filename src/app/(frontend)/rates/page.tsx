@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic'
 
 const description = '주택용 전기요금, 주요 지역 도시가스, 수도요금, 지역난방 요금표를 시행일과 공식 출처와 함께 모았습니다.'
 
-export const metadata: Metadata = pageMeta({ title: '공식 요금표', description, path: '/rates' })
+export const metadata: Metadata = pageMeta({ title: '요금표 모음', description, path: '/rates' })
 
 type WaterCities = {
   rows: { city: string; water: string; meter20: string; sewer: string; use: string; basis: string; sourceUrl: string }[]
@@ -87,13 +87,17 @@ export default async function RatesPage() {
   return (
     <>
       <PhotoHead
-        eyebrow={<Breadcrumbs items={[{ name: '공식 요금표', path: '/rates' }]} />}
+        eyebrow={<Breadcrumbs items={[{ name: '요금표 모음', path: '/rates' }]} />}
         lede={description}
         photo="/photos/label.webp"
-        title="공식 요금표"
+        title="요금표 모음"
       />
       <section className="section">
         <div className="frame frame--text rates">
+          <p>
+            살림핀다가 각 기관의 공식 자료에서 옮겨 정리한 표이며, 기관이 직접 제공하는 페이지가 아닙니다. 표마다 시행 기준과
+            출처, 확인 날짜를 적었습니다. 실제 청구와 납부의 기준은 각 기관의 고지서입니다.
+          </p>
           {electric && e ? (
             <div className="rates-block">
               <h2>주택용 전기요금</h2>
