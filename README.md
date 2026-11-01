@@ -46,3 +46,7 @@ Saju moved to `saju.pinda.kr` (`C:\Window_DEV\PindaAI`). `worker.ts` redirects i
 
 - `PAYLOAD_SECRET`: Worker secret, plus `.env` for local CLI runs.
 - Admin login: `.secrets/admin.txt` (not in git).
+
+## robots.txt
+
+The zone route `pinda.kr/robots.txt` goes to the Worker `pinda-naver-verify`, which allows everything. `public/robots.txt` is not what crawlers see.
