@@ -44,6 +44,17 @@ export async function CategoryPage({ category }: { category: (typeof CATEGORIES)
           <PostList posts={posts?.docs ?? []} />
         </div>
       </section>
+      <section className="section section--tone">
+        <div className="frame frame--text">
+          <h2>{category.title}, 먼저 확인할 것</h2>
+          {category.guide.map((item) => (
+            <div key={item.q}>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   )
 }
